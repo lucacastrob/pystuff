@@ -1,0 +1,99 @@
+[
+    {
+        "HEADER": "HEADER",
+        "robots": {
+            "id_hull0": "hull0.png",
+            "id_hull1": "hull1.png"
+        },
+        "balas": {
+            "id_bala0": "bala0.png"
+        },
+        "explosiones": {
+            "id_explosion0": "explosion0.png"
+        }
+    },
+    {
+        "robots": {
+            "0": {
+                "posicion": [
+                    100,
+                    200
+                ],
+                "angulo": 90,
+                "hp": 100,
+                "anguloarma": 90
+            },
+            "1": {
+                "posicion": [
+                    500,
+                    500
+                ],
+                "angulo": 90,
+                "hp": 100,
+                "anguloarma": 90
+            }
+        },
+        "balas": [
+            {
+                "0": {
+                    "tipobala": 0,
+                    "pos": [
+                        100,
+                        100
+                    ]
+                }
+            }
+        ],
+        "explosiones": {
+            "0": {
+                "tipo": 0,
+                "pos": [
+                    100,
+                    100
+                ]
+            }
+        }
+    },
+    {
+        "robots": {
+            "0": {
+                "posicion": [
+                    100,
+                    200
+                ],
+                "angulo": 90,
+                "hp": 100,
+                "anguloarma": 90
+            },
+            "1": {
+                "posicion": [
+                    500,
+                    500
+                ],
+                "angulo": 90,
+                "hp": 100,
+                "anguloarma": 90
+            }
+        },
+        "balas": [
+            {
+                "0": {
+                    "tipobala": 0,
+                    "pos": [
+                        100,
+                        100
+                    ]
+                }
+            }
+        ],
+        "explosiones": {
+            "0": {
+                "tipo": 0,
+                "pos": [
+                    100,
+                    100
+                ]
+            }
+        }
+    }
+]
