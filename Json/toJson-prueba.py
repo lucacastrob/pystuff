@@ -33,16 +33,16 @@ class JsonRobot:
                 self.__rdir.append(frame["robots"][str(r)]["angulo"])
                 self.__hp.append(frame["robots"][str(r)]["hp"])
                 self.__tdir.append(frame["robots"][str(r)]["anguloarma"])
-            for b in range(len(frame["balas"])): #recorre "balas"
-                self.__tb.append(frame["balas"][b]["tipobala"])
-                self.__bx.append(frame["balas"][b]["pos"][0])
-                self.__by.append(frame["balas"][b]["pos"][1])
-                self.__spriteb.append("bala" + str(b) + ".png")
-            for e in range(len(frame["explosiones"])): #recorre "explosiones"
-                self.__te.append(frame["explosiones"][str(e)]["tipo"])
-                self.__ex.append(frame["explosiones"][str(e)]["pos"][0])
-                self.__ey.append(frame["explosiones"][str(e)]["pos"][1])
-                self.__spritee.append("explosion" + str(e) + ".png")
+            # for b in range(len(frame["balas"])): #recorre "balas"
+            #     self.__tb.append(frame["balas"][b]["tipobala"])
+            #     self.__bx.append(frame["balas"][b]["pos"][0])
+            #     self.__by.append(frame["balas"][b]["pos"][1])
+            #     self.__spriteb.append("bala" + str(b) + ".png")
+            # for e in range(len(frame["explosiones"])): #recorre "explosiones"
+            #     self.__te.append(frame["explosiones"][str(e)]["tipo"])
+            #     self.__ex.append(frame["explosiones"][str(e)]["pos"][0])
+            #     self.__ey.append(frame["explosiones"][str(e)]["pos"][1])
+            #     self.__spritee.append("explosion" + str(e) + ".png")
     
      
     def to_json(self):
@@ -54,11 +54,11 @@ class JsonRobot:
         dicc["robots"] = {}
         for x in range(2):
             dicc["robots"]["id_hull" + str(x)] = self.__spriter[x] #establece los sprites
-        dicc["balas"] = {}
-        dicc["explosiones"] = {}
-        for tde in range(1): #establece los sprites según el tipo de bala/explosión.
-            dicc["balas"]["id_bala" + str(tde)] = self.__spriteb[tde]
-            dicc["explosiones"]["id_explosion" + str(tde)] = self.__spritee[tde]
+        # dicc["balas"] = {}
+        # dicc["explosiones"] = {}
+        # for tde in range(1): #establece los sprites según el tipo de bala/explosión.
+        #     dicc["balas"]["id_bala" + str(tde)] = self.__spriteb[tde]
+        #     dicc["explosiones"]["id_explosion" + str(tde)] = self.__spritee[tde]
         lista_frames.append(dicc) #agrega al JSON
         for frames in range(len(self.__json_dict)): #recorre los frames
             frame = {}
@@ -69,17 +69,17 @@ class JsonRobot:
                 frame["robots"][str(robt)]["angulo"] = self.__rdir[robt]
                 frame["robots"][str(robt)]["hp"] = self.__hp[robt]
                 frame["robots"][str(robt)]["anguloarma"] = self.__tdir[robt]
-            frame["balas"] = []
-            diccionario_ = {}
-            frame["balas"].append(diccionario_)
-            for nbala in range(len(self.__json_dict[frames]["balas"])): #agrega atrib. a las dif. balas
-                frame["balas"][nbala][str(nbala)] = {"tipobala" : self.__tb[nbala], 
-                "pos" : [self.__bx[nbala], self.__by[nbala]] }   
-            frame["explosiones"] = {}
-            for exp in range(len(self.__json_dict[frames]["explosiones"])): #agrega atrib. a las dif. expl.
-                frame["explosiones"][str(exp)] = {}
-                frame["explosiones"][str(exp)]["tipo"] = self.__te[exp]
-                frame["explosiones"][str(exp)]["pos"] = [self.__ex[exp], self.__by[exp]]
+            # frame["balas"] = []
+            # diccionario_ = {}
+            # frame["balas"].append(diccionario_)
+            # for nbala in range(len(self.__json_dict[frames]["balas"])): #agrega atrib. a las dif. balas
+            #     frame["balas"][nbala][str(nbala)] = {"tipobala" : self.__tb[nbala], 
+            #     "pos" : [self.__bx[nbala], self.__by[nbala]] }   
+            # frame["explosiones"] = {}
+            # for exp in range(len(self.__json_dict[frames]["explosiones"])): #agrega atrib. a las dif. expl.
+            #     frame["explosiones"][str(exp)] = {}
+            #     frame["explosiones"][str(exp)]["tipo"] = self.__te[exp]
+            #     frame["explosiones"][str(exp)]["pos"] = [self.__ex[exp], self.__by[exp]]
             lista_frames.append(frame)
         with open('data.json', 'w') as file: #abre el archivo "data.json" con permisos "w"
             json.dump(lista_frames, file, indent=4)  #dumpea el json en el archivo
